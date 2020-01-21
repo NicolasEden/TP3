@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+
+
+*{
+    font-family: 'Roboto';
+}
+
+div.head {
+    background-color: #19283f;
+    div#navbar {
+        li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .nav-link {
+            display: inline-block;
+            color: #a8b9c0;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00c7c0;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            color: #00c7c0;
+        }
+        #clear{
+            color: #a8b9c0;
+            width: 0%;
+        }
+        button {
+            margin-top: -50px;
+            width: 110px;
+            border-radius: 100px;
+        }
+    }
+    div.header {
+        margin-top: 133px;
+        h1{
+            font-family: "Roboto";
+            color: #f0f8fb;
+            font-weight: 300;
+            font-size: 51px;
+        }
+        p {
+            color: #a8b9c0;
+            font-size: 15px;
+        }
+        button {
+            margin-top: 50px;
+            width: 190px;
+            height: 45px;
+            border-radius: 100px;
+        }
+        .button-title{
+            margin-top: 34px;
+            padding-bottom: 143px;
+        }
+    }
+}
+div.WeAreGood {
+    margin-top: 58px;
+    h1{
+        margin-top: 49px;
+        font-size: 35px;
+    }
+    p {
+        line-height: 27px;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+    img.Path {
+        margin-top: -40px;
+    }
+    img.OneTwoTreeImg {
+        margin-top: 64px;
+    }
+    div.OneTwoTree {
+        h1{
+            color: #ffc501;
+            font-size: 20px;
+        }
+        p{
+            font-size: 15px;
+            color: #a8b9c0;
+        }
+        margin-bottom: 64px;
+
+    }
+}
+div.WeMakeThis {
+    padding-top: 58px;
+    background-color: #eff7fa;
+    h1{
+        margin-top: 49px;
+        font-size: 35px;
+    }
+    p {
+        line-height: 27px;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+    img.Path {
+        margin-top: -40px;
+    }
+}
+div.imageList{
+    background-color: #eff7fa;
+    div.row{
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        div.test{
+            width: 270px;
+            height: 200px;
+            background-color: white;
+        }
+    }
+}
