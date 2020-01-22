@@ -4,7 +4,7 @@ var core = document.body.innerHTML;
 function getIMG(word, number){
     document.getElementById('content-img').innerHTML = "";
     $.ajax({
-        url: 'https://api.unsplash.com/search/photos?client_id=82c3342c7766b1900717e0a7577f3303cea19fa72c1d4aba79c7a90638eb69b5&page=1&query='+word+'&quantity=100&h=200&w=270',
+        url: 'https://api.unsplash.com/search/photos?client_id=82c3342c7766b1900717e0a7577f3303cea19fa72c1d4aba79c7a90638eb69b5&page=3&query='+word+'&per_page=500',
         type: 'GET',
         dataType: 'json',
         async: false,
@@ -14,23 +14,42 @@ function getIMG(word, number){
             alert: ("Request:"+ JSON.stringify(req));
         }
     });
-    var b = 0;
+    var b = [];
     for (var i = 0; i < number; i++) {
         var newDiv = document.createElement('div')
         newDiv.setAttribute('class', 'row');
         document.getElementById('content-img').appendChild(newDiv)
         for (var a = 0; a < 4; a++) {
+            do {
+                var nb1 = Math.floor(Math.random() * Math.floor(30))
+            } while (b.indexOf(nb1) != -1);
+            var nb = nb1;
+            console.log(b.push(nb1))
             var newDivImg = document.createElement('div')
             newDivImg.setAttribute('class', 'test')
             var newImg = document.createElement('img')
             newImg.style.width = 270+"px"
             newImg.style.height = 200+"px"
-            newImg.setAttribute('src', listIMG.results[b].urls.regular)
+            newImg.setAttribute('src', listIMG.results[nb].urls.regular)
             newDivImg.appendChild(newImg)
             newDiv.appendChild(newDivImg)
-            b++;
         }
     }
+}
+
+function alt(text){
+    newDiv = document.createElement("div");
+    newDiv.setAttribute('class', 'alert alert-danger alert-dismissible fade show')
+    newDiv.setAttribute('role', 'alert')
+    newDiv.setAttribute('style', 'width: 500px;')
+    newDiv.innerHTML = (text)
+    newButton = document.createElement("button")
+    newButton.setAttribute('class', 'close')
+    newButton.setAttribute('data-dismiss', 'alert')
+    newButton.setAttribute('aria-label', 'Close')
+    newButton.innerHTML = ('<span aria-hidden="true">&times;</span>');
+    newDiv.appendChild(newButton);
+    document.getElementById('alert').appendChild(newDiv)
 }
 
 document.body.addEventListener('load', function(event) {
@@ -51,4 +70,16 @@ document.getElementById('Photography').addEventListener('click', function(event)
 });
 document.getElementById('Apps').addEventListener('click', function(event) {
     getIMG('Apps', 2)
+});
+document.getElementById('order').addEventListener('click', function(event) {
+    alt("<strong>ERREUR :</strong> Vous n'êtes pas égligible à cette offre.")
+});
+document.getElementById('order').addEventListener('load', function(event) {
+    getIMG('all', 2)
+});
+document.getElementById('want').addEventListener('click', function(event) {
+    alt("<strong>ERREUR :</strong> Vous voulez, mais vous n'aurez pas.")
+});
+document.getElementById('start').addEventListener('click', function(event) {
+    alt("<strong>ERREUR :</strong> Get stopped.")
 });

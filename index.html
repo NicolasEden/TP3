@@ -13,7 +13,9 @@
     <script src="https://kit.fontawesome.com/51def7400e.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color: white;">
+<body style="background-color: white;" onload="getIMG('all',2)">
+    <div class="container" id="alert">
+        </div>
     <div class="head">
         <div class="container" id="navbar">
             <nav class="navbar navbar-expand-lg navbar-dark bg-transparant navbar-static-top">
@@ -52,7 +54,7 @@
                     <h1>Taste the Creativity</h1>
                     <p>We make awesome graphic and web design</p>
                     <div class="button-title">
-                        <button class="btn btn-danger text-warning my-2 my-sm-0" type="submit">Get Started</button>
+                        <button class="btn btn-danger text-warning my-2 my-sm-0" id="start" type="submit">Get Started</button>
                     </div>
                 </div>
 
@@ -130,30 +132,166 @@
                         <div class="col"></div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                    </div>
-                    <div class="col">
-
-                    </div>
-                    <div class="col">
-
-                    </div>
-                    <div class="col">
-
-                    </div>
-                    <div class="col">
-
-                    </div>
-                </div>
             </div>
-            <div class="content-img" id="content-img" onload='getIMG('all', 2)'>
+            <div class="content-img" id="content-img">
                 <div class="row" id="row-img">
                 </div>
             </div>
-            <button class="btn btn-danger text-warning my-2 my-sm-0" id="all" type="submit">I WANT MORE...</button>
+            <div class="text-center" id="want-text-center">
+                <button class="btn btn-danger text-warning my-2 my-sm-0" id="want" type="submit">I WANT MORE...</button>
+            </div>
+        </div>
+    </div>
+    <div class="someStuff">
+        <div class="title">
+            <div class="text-center">
+                <div class="img">
+                    <img src="./Ressources/Composite_Path.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Some Stuff About Us</h1>
+                    <p>THE GREAT TEAM</p>
+                    <img src="./Ressources/Path.png" class="Path" alt="">
+                </div>
+                <div class="subtitle">
+                    <p>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+                </div>
+            </div>
+        </div>
+        <div class="someContent">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="text">
+                            <h1>Retina Design</h1>
+                            <div class="p-text">
+                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                                <p>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button class="btn btn-danger text-warning my-2 my-sm-0" id="order" type="submit">OREDER ME ONE</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="./Ressources/mac.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="meetTheTeam">
+        <div class="container">
+            <div class="text-center">
+                <div class="title">
+                    <h1>Meet the Team</h1>
+                    <p>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+                </div>
+                <div class="text-center">
+                    <div class="team">
+                        <div class="col-team">
+                            <img src="./Ressources/luke.jpg" alt="">
+                            <div class="prenoms">
+                                <p>Luke Skywalker</p>
+                            </div>
+                            <div class="prenoms-text">
+                                <p>“I don't understand how we got by those troops. I thought we were dead.“</p>
+                            </div>
+                        </div>
+                        <div class="col-team">
+                            <img src="./Ressources/obi.jpg" alt="">
+                            <div class="prenoms">
+                                <p>Obi-Wan Kenobi</p>
+                            </div>
+                            <div class="prenoms-text">
+                                <p>“Your clones are very impressive. You must be very proud”</p>
+                            </div>
+                        </div>
+                        <div class="col-team">
+                            <img src="./Ressources/leia.jpg" alt="">
+                            <div class="prenoms">
+                                <p>Princess Leia</p>
+                            </div>
+                            <div class="prenoms-text">
+                                <p> “I don't know who you are or where you came from, but from now on you'll do as I tell you, okay?” </p>
+                            </div>
+                        </div>
+                        <div class="col-team">
+                            <img src="./Ressources/yoda.jpg" alt="">
+                            <div class="prenoms">
+                                <p>Yoda</p>
+                            </div>
+                            <div class="prenoms-text">
+                                <p>“Do not assume anything Obi-Wan. Clear your mind must be if you are to discover the real villains behind this plot.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sponsor">
+        <div class="container">
+            <div class="text-center">
+                <div class="row">
+                    <div class="col">
+                        <img src="./Ressources/sponsor/Logo_1.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./Ressources/sponsor/Logo_2.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./Ressources/sponsor/Logo_3.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./Ressources/sponsor/Logo_2.png" alt="">
+                    </div>
+                    <div class="col">
+                        <img src="./Ressources/sponsor/Logo_1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="start">
+        <div class="container">
+            <div class="text-center">
+                <h1>Start Your Project Now</h1>
+                <p>Leave your description and we start the engine. Don't worry, you can cancel anytime</p>
+                <div class="button">
+                    <button class="btn btn-danger text-warning my-2 my-sm-0" id="startproj" type="submit">START PROJECT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="read">
+        <div class="title">
+            <div class="text-center">
+                <div class="img">
+                    <img src="./Ressources/Composite_Path.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Read Our Blog</h1>
+                    <p>NEW STORIES</p>
+                    <img src="./Ressources/Path.png" class="Path" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+              <div class="col">
+
+              </div>
+              <div class="col">
+
+              </div>
+              <div class="col">
+
+              </div>
+            </div>
         </div>
     </div>
     <script src="./JS/index.js" charset="utf-8"></script>
 </body>
+
 </html>
