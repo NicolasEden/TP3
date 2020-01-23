@@ -277,6 +277,7 @@ div.start {
 }
 div.read {
     padding-top: 50px;
+    padding-bottom: 40px;
     div.title {
         h1{
             margin-top: 49px;
@@ -290,5 +291,61 @@ div.read {
         img.Path {
             margin-top: -40px;
         }
+    }
+    div#read-container {
+        div.read-row {
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 350px;
+                height: 130px;
+            }
+            div.read-text {
+                p.p1 {
+                    margin-top: 5px;
+                    color: #a8b9c0;
+                    font-size: 13px;
+                }
+                p.p2 {
+                    font-size: 20px;
+                    color: #1a2940;
+                    margin-top: -15px;
+                }
+            }
+        }
+    }
+}
+div.newsletter {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color: #ffc400;
+    p{
+        color: #1a2940;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    input.newsletter-input {
+        color: white;
+        display: inline-block;
+        width: 440px;
+        border: 0 solid white;
+        border-bottom-width: 1px;
+        border-radius: 3px;
+        background-color: #ffc400;
+        font-family: 'Roboto'
+    }
+    input.newsletter-input:focus {
+        outline: none;
+    }
+    input.newsletter-input::placeholder {
+        color: white;
+    }
+    button {
+        width: 198px;
+        height: 45px;
+        border-radius: 100px;
+    }
+    #col-button {
+        margin-top: -15px;
     }
 }

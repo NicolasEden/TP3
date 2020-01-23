@@ -4,7 +4,7 @@ var core = document.body.innerHTML;
 function getIMG(word, number){
     document.getElementById('content-img').innerHTML = "";
     $.ajax({
-        url: 'https://api.unsplash.com/search/photos?client_id=82c3342c7766b1900717e0a7577f3303cea19fa72c1d4aba79c7a90638eb69b5&page=3&query='+word+'&per_page=500',
+        url: 'https://api.unsplash.com/search/photos?client_id=82c3342c7766b1900717e0a7577f3303cea19fa72c1d4aba79c7a90638eb69b5&page='+Math.floor(Math.random() * Math.floor(10))+'&query='+word+'&per_page=500',
         type: 'GET',
         dataType: 'json',
         async: false,
@@ -30,7 +30,7 @@ function getIMG(word, number){
             var newImg = document.createElement('img')
             newImg.style.width = 270+"px"
             newImg.style.height = 200+"px"
-            newImg.setAttribute('src', listIMG.results[nb].urls.regular)
+            newImg.setAttribute('src', listIMG.results[nb].urls.small)
             newDivImg.appendChild(newImg)
             newDiv.appendChild(newDivImg)
         }
