@@ -1,3 +1,16 @@
+function sendEmail(email) {
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "bonditheme@gmail.com",
+	Password : "moliu38110",
+	To : email,
+	From : "bonditheme@gmail.com",
+	Subject : "Bienvenue !",
+	Body : "Bienvenue dans les Newsletters de Bondi Theme <br/><br/>Cordialement Nicolas Guillaume - Gérant Bondi Theme",
+	}).then(
+		message => console.log('EMAIL SEND - Success')
+	);
+}
 var listIMG = null;
 var donne = null;
 var core = document.body.innerHTML;
@@ -23,8 +36,8 @@ function getIMG(word, number){
             do {
                 var nb1 = Math.floor(Math.random() * Math.floor(30))
             } while (b.indexOf(nb1) != -1);
+            b.push(nb1);
             var nb = nb1;
-            console.log(b.push(nb1))
             var newDivImg = document.createElement('div')
             newDivImg.setAttribute('class', 'test')
             var newImg = document.createElement('img')
@@ -54,22 +67,52 @@ function alt(text){
 
 document.body.addEventListener('load', function(event) {
     getIMG('all', 2)
+    document.getElementById('all').setAttribute('class', 'btn btn-danger text-warning my-2 my-sm-0')
+    document.getElementById('Design').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Code').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Photography').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Apps').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
 });
 
 document.getElementById('all').addEventListener('click', function(event) {
     getIMG('all', 2)
+    document.getElementById('all').setAttribute('class', 'btn btn-danger text-warning')
+    document.getElementById('Design').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Code').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Photography').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Apps').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
 });
 document.getElementById('Design').addEventListener('click', function(event) {
     getIMG('Design', 2)
+    document.getElementById('all').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Design').setAttribute('class', 'btn btn-danger text-warning')
+    document.getElementById('Code').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Photography').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Apps').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
 });
 document.getElementById('Code').addEventListener('click', function(event) {
     getIMG('Code', 2)
+    document.getElementById('all').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Design').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Code').setAttribute('class', 'btn btn-danger text-warning')
+    document.getElementById('Photography').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Apps').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
 });
 document.getElementById('Photography').addEventListener('click', function(event) {
     getIMG('Photography', 2)
+    document.getElementById('all').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Design').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Code').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Photography').setAttribute('class', 'btn btn-danger text-warning')
+    document.getElementById('Apps').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
 });
 document.getElementById('Apps').addEventListener('click', function(event) {
     getIMG('Apps', 2)
+    document.getElementById('all').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Design').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Code').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Photography').setAttribute('class', 'btn bg-transparant text-secondary my-2 my-sm-0')
+    document.getElementById('Apps').setAttribute('class', 'btn btn-danger text-warning')
 });
 document.getElementById('order').addEventListener('click', function(event) {
     alt("<strong>ERREUR :</strong> Vous n'êtes pas égligible à cette offre.")
@@ -78,8 +121,29 @@ document.getElementById('order').addEventListener('load', function(event) {
     getIMG('all', 2)
 });
 document.getElementById('want').addEventListener('click', function(event) {
-    alt("<strong>ERREUR :</strong> Vous voulez, mais vous n'aurez pas.")
+    getIMG(document.getElementsByClassName('btn btn-danger text-warning')[2].innerHTML, 4)
 });
 document.getElementById('start').addEventListener('click', function(event) {
     alt("<strong>ERREUR :</strong> Get stopped.")
+});
+document.getElementById('sub').addEventListener('click', function(event) {
+    document.getElementById('email').focus()
+});
+document.getElementById('email').addEventListener('keypress', function(event) {
+    if (event.key == "Enter") {
+        if (document.getElementById('email').value == "") {
+            alt('<strong>ERREUR :</strong> Merci de mettre une adress mail...')
+            return;
+        }
+        sendEmail(document.getElementById('email').value)
+        document.getElementById('email').value = ""
+    }
+});
+document.getElementById('email-button').addEventListener('click', function(event) {
+    if (document.getElementById('email').value == "") {
+        alt(' <strong>ERREUR :</strong>Merci de mettre une adress mail...')
+        return;
+    }
+    sendEmail(document.getElementById('email').value)
+    document.getElementById('email').value = ""
 });

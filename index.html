@@ -11,6 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://kit.fontawesome.com/51def7400e.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body style="background-color: white;" onload="getIMG('all',2)">
@@ -120,13 +121,13 @@
                             <button class="btn bg-transparant text-secondary my-2 my-sm-0" id="Design" type="submit">Design</button>
                         </div>
                         <div class="col">
-                            <button class="btn bg-transparant text-secondary  my-2 my-sm-0" id="Code" type="submit">Code</button>
+                            <button class="btn bg-transparant text-secondary my-2 my-sm-0" id="Code" type="submit">Code</button>
                         </div>
                         <div class="col">
-                            <button class="btn bg-transparant text-secondary  my-2 my-sm-0" id="Photography" type="submit">Photography</button>
+                            <button class="btn bg-transparant text-secondary my-2 my-sm-0" id="Photography" type="submit">Photography</button>
                         </div>
                         <div class="col">
-                            <button class="btn bg-transparant text-secondary  my-2 my-sm-0" id="Apps" type="submit">Apps</button>
+                            <button class="btn bg-transparant text-secondary my-2 my-sm-0" id="Apps" type="submit">Apps</button>
                         </div>
                         <div class="col"></div>
                         <div class="col"></div>
@@ -314,7 +315,7 @@
         </div>
         <div class="text-center">
             <div class="button">
-                <button class="btn btn-danger text-warning my-2 my-sm-0" type="submit">Subscribe</button>
+                <button class="btn btn-danger text-warning my-2 my-sm-0" id="sub" type="submit">Subscribe</button>
             </div>
         </div>
     </div>
@@ -326,12 +327,34 @@
                         <p>Subscribe to our Newsletter:</p>
                     </div>
                     <div class="col">
-                        <input class="newsletter-input" placeholder="Enter email Address" />
+                        <input class="newsletter-input" id="email" placeholder="Enter email Address" />
                     </div>
                     <div class="col" id="col-button">
-                        <button class="btn btn-dark text-warning my-2 my-sm-0" type="submit">Subscribe</button>
+                        <button class="btn btn-dark text-warning my-2 my-sm-0" id="email-button" type="submit">Subscribe</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="row-1">
+                        <img id="logo2" src="./Ressources/Logo.png" alt="">
+                        <p>Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                        <div class="row-2">
+                            <p>Created by <strong class="color-info">Graphberry</strong>, Belgrade, Serbia</p>
+                            <p> © 2017 - Bondi.Inc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
             </div>
         </div>
     </div>
